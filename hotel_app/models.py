@@ -41,8 +41,8 @@ lista_metodos_pago = [
 ]
 
 class Booking(models.Model):
-    fk_cliente = models.ForeignKey(User, on_delete=models.CASCADE, blank=False, unique=False)
-    fk_habitacion = models.ForeignKey(Room, blank=False, on_delete=models.DO_NOTHING)
+    fk_cliente = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, unique=False, null=True)
+    fk_habitacion = models.ForeignKey(Room, blank=False, on_delete=models.DO_NOTHING, null=True)
     estado = models.CharField(max_length=45, choices=lista_estados, default=lista_estados[0], blank=False)
     metodo_pago = models.CharField(max_length=45, choices=lista_metodos_pago, blank=True)
     monto_pagado = models.FloatField(blank=False, default=0)
