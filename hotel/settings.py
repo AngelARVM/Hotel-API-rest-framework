@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'hotel_app',
 ]
 
+APPEND_SLASH=False
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
